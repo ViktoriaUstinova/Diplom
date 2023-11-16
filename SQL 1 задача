@@ -1,0 +1,6 @@
+SELECT "Couriers".login,        
+COUNT ("inDelivery")      
+FROM "Couriers"JOIN "Orders" 
+      ON "Orders"."courierId"="Couriers".id
+WHERE "Orders"."inDelivery"=true
+GROUP BY "Couriers".login
